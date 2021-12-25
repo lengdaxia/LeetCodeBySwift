@@ -46,8 +46,7 @@ import Foundation
  Seen this question in a real interview before?
  */
 
-
-struct Difference{
+fileprivate struct Difference{
 	var diff: [Int] = []
 	
 	init(_ nums: [Int]) {

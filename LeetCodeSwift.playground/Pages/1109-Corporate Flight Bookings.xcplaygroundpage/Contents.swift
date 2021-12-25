@@ -46,39 +46,6 @@ import Foundation
  Seen this question in a real interview before?
  */
 
-fileprivate struct Difference{
-	var diff: [Int] = []
-	
-	init(_ nums: [Int]) {
-		assert(nums.count > 0, "nums count bigger more than 0")
-		
-		diff = Array(repeating: 0, count: nums.count)
-		diff[0] = nums[0]
-		for i in 1..<nums.count {
-			diff[i] = nums[i] - nums[i-1]
-		}
-	}
-	
-	public mutating func increment(_ i: Int, _ j: Int, _ val: Int){
-		diff[i] += val
-		if j+1 < diff.count{
-			diff[j+1] - val
-		}
-	}
-	
-	public func originalArray() -> [Int]{
-		
-		var res: [Int] = Array(repeating: 0, count: diff.count)
-		res[0] = diff[0]
-		
-		for i in 1..<diff.count {
-			res[i] = res[i-1] + diff[i]
-		}
-		return res
-	}
-	
-}
-
 class Solution {
 	
 	func corpFlightBookings(_ bookings: [[Int]], _ n: Int) -> [Int] {
@@ -96,6 +63,41 @@ class Solution {
 		
 		return diff.originalArray()
 	}
+	
+	
+	struct Difference{
+	 var diff: [Int] = []
+	 
+	 init(_ nums: [Int]) {
+		 assert(nums.count > 0, "nums count bigger more than 0")
+		 
+		 diff = Array(repeating: 0, count: nums.count)
+		 diff[0] = nums[0]
+		 for i in 1..<nums.count {
+			 diff[i] = nums[i] - nums[i-1]
+		 }
+	 }
+	 
+	 public mutating func increment(_ i: Int, _ j: Int, _ val: Int){
+		 diff[i] += val
+		 if j+1 < diff.count{
+			 diff[j+1] - val
+		 }
+	 }
+	 
+	 public func originalArray() -> [Int]{
+		 
+		 var res: [Int] = Array(repeating: 0, count: diff.count)
+		 res[0] = diff[0]
+		 
+		 for i in 1..<diff.count {
+			 res[i] = res[i-1] + diff[i]
+		 }
+		 return res
+	 }
+	 
+ }
+
 }
 
 

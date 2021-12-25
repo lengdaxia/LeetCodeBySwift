@@ -8,5 +8,6 @@
         <page name='370-区间加法'/>
         <page name='1109-Corporate Flight Bookings'/>
         <page name='1094-Car Pooling'/>
+        <page name='76-Minimum Window Substring'/>
     </pages>
 </playground>

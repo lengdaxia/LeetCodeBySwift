@@ -56,3 +56,4 @@ let head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, nil)))))
 let k = 2
 
 let ret = Solution.removeNthFromEnd(head, k)
+

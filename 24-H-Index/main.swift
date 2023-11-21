@@ -1,0 +1,18 @@
+class Solution {
+
+    func hIndex(_ citations: [Int]) -> Int {
+
+        var sortedCitations = citations.sorted(by: >)
+        var hIndex = 0
+        
+        for (index, citation) in sortedCitations.enumerated() {
+            if citation >= index + 1 {
+                hIndex = index + 1
+            } else {
+                break
+            }
+        }
+        
+        return hIndex
+    }
+}

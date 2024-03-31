@@ -45,9 +45,26 @@ class SolutionV1 {
         }
         return dp[n-1][0]
     }
+
+
+    static func maxProfit2(_ prices:[Int]) -> Int {
+
+        var minPrice = Int.max
+        var maxProfit = 0 
+
+        for i in 0..<prices.count {
+            if minPrice > prices[i] {
+                minPrice = prices[i]
+            } else if prices[i] - minPrice > maxProfit {
+                maxProfit = prices[i] - minPrice
+            }
+        }
+        return maxProfit
+    }
  
 }
 
 let prices = [7,1,5,3,6,4];
-let ret = SolutionV1.maxProfit(prices)
+// let ret = SolutionV1.maxProfit(prices)
+let ret = SolutionV1.maxProfit2(prices)
 print(ret)

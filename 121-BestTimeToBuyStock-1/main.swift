@@ -2,7 +2,7 @@
 class Solution {
     static func maxProfit(_ prices: [Int]) -> Int {
         let n = prices.count
-        var dp = Array(repeating: Array(repeating: 0, count: 2), count: 2)
+        var dp = Array(repeating: Array(repeating: 0, count: 2), count: n)
 
         for i in 0..<n {
             // 给dp状态表初始化赋值

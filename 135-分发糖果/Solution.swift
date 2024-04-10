@@ -34,12 +34,15 @@ class Solution {
 
         let n = ratings.count
         var candies:[Int] = [Int](repeating: 1, count: n)
+
+        // 从左往右，评分高的多一个糖果
         for i in 1..<n {
             if ratings[i] > ratings[i-1] {
                 candies[i] = candies[i-1] + 1
             }
         }
 
+        // 从右往左，评分高的
         for i in (0..<n-1).reversed() {
             if ratings[i] > ratings[i+1] {
                 candies[i] = max(candies[i], candies[i+1]+1)
@@ -52,6 +55,8 @@ class Solution {
 }
 
 // let ratings = [1,0,2]
-let ratings = [1,2,2]
+// let ratings = [1,2,2]
+let ratings = [1,2,2,3,4,5,3,2,0,1,0]
+
 let ret = Solution.candy(ratings)
 print(ret)
